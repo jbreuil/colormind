@@ -1,4 +1,4 @@
-import type { Color } from '../types/Color'
+import type { Color } from '@/types/Color'
 
 const colors: Ref<Color[]> = ref([
   { name: 'empty', color: 'bg-transparent outline', icon: 'i-mdi-help' },

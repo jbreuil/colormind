@@ -1,5 +1,5 @@
-import { Levels } from '../assets/levels'
-import type { GameParameters } from '../types/GameParameters'
+import { Levels } from '@/assets/levels'
+import type { GameParameters } from '@/types/GameParameters'
 
 const levels: Ref<GameParameters[]> = ref(Levels)
 

@@ -9,7 +9,7 @@ import './style.css'
 
 const pinia = createPinia()
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/colormind/'),
   // You don't need to pass the routes anymore,
   // the plugin writes it for you 🤖
 })

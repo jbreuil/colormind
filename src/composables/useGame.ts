@@ -1,4 +1,4 @@
-import type { Guess } from '../types/Guess'
+import type { Guess } from '@/types/Guess'
 
 export function useGame(
   numberOfColors = 8,

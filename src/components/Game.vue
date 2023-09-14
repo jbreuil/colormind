@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GameParameters } from '../types/GameParameters'
+import type { GameParameters } from '@/types/GameParameters'
 
 const props = withDefaults(defineProps<GameParameters>(), {
   numberOfColors: 6,
