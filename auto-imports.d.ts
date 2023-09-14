@@ -174,6 +174,7 @@ declare global {
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGame: typeof import('./src/composables/useGame')['useGame']
+  const useGameManager: typeof import('./src/composables/useGameManager')['useGameManager']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
   const useIdle: typeof import('@vueuse/core')['useIdle']
@@ -463,6 +464,7 @@ declare module 'vue' {
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGame: UnwrapRef<typeof import('./src/composables/useGame')['useGame']>
+    readonly useGameManager: UnwrapRef<typeof import('./src/composables/useGameManager')['useGameManager']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
@@ -746,6 +748,7 @@ declare module '@vue/runtime-core' {
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGame: UnwrapRef<typeof import('./src/composables/useGame')['useGame']>
+    readonly useGameManager: UnwrapRef<typeof import('./src/composables/useGameManager')['useGameManager']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>

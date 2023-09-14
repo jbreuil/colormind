@@ -1,0 +1,98 @@
+export const Levels = [
+  {
+    numberOfColors: 3,
+    duplicateColor: false,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 4,
+    duplicateColor: false,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 5,
+    duplicateColor: false,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 6,
+    duplicateColor: false,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 6,
+    duplicateColor: false,
+    numberOfColorToGuess: 4,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 7,
+    duplicateColor: false,
+    numberOfColorToGuess: 4,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 8,
+    duplicateColor: false,
+    numberOfColorToGuess: 4,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 8,
+    duplicateColor: false,
+    numberOfColorToGuess: 5,
+    numberOfTries: 10,
+  },
+  {
+    numberOfColors: 8,
+    duplicateColor: false,
+    numberOfColorToGuess: 5,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 3,
+    duplicateColor: true,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 4,
+    duplicateColor: true,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 6,
+    duplicateColor: true,
+    numberOfColorToGuess: 3,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 6,
+    duplicateColor: true,
+    numberOfColorToGuess: 4,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 7,
+    duplicateColor: true,
+    numberOfColorToGuess: 4,
+    numberOfTries: 8,
+  },
+  {
+    numberOfColors: 8,
+    duplicateColor: true,
+    numberOfColorToGuess: 4,
+    numberOfTries: 10,
+  },
+  {
+    numberOfColors: 8,
+    duplicateColor: true,
+    numberOfColorToGuess: 4,
+    numberOfTries: 8,
+  },
+]

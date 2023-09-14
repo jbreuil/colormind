@@ -1,46 +1,52 @@
 <script setup lang="ts">
 const {
-  listOfColors,
-  guessHistory,
-  currentGuess,
-  possibleColors,
-  isGuessComplete,
-  addColor,
-  guess,
-  secretColorCombination,
-} = useGame(6, true, 3)
+  level,
+  levelParameters,
+  hasNextLevel,
+  nextLevel,
+  restart,
+} = useGameManager()
+
+const gameOver = ref(false)
+
+function handleWon() {
+  if (!hasNextLevel.value)
+    gameOver.value = true
+  nextLevel()
+}
 </script>
 
 <template>
-  <div class="flex flex-col justify-center ">
-    <TransitionGroup name="history">
-      <Guess
-        v-for="(guess, index) in guessHistory"
-        :key="index"
-        :colors="guess.colors"
-        :correct="guess.correct"
-        :present="guess.present"
-        class="my-2"
-      />
-    </TransitionGroup>
-    <GuessInput
-      :colors="possibleColors"
-      :guess="currentGuess"
-      :disabled="!isGuessComplete"
-      @add="addColor"
-      @guess="guess"
-    />
+  <Game
+    v-if="!gameOver"
+    :key="level"
+    class="mb-10"
+    :number-of-colors="levelParameters.numberOfColors"
+    :duplicate-color="levelParameters.duplicateColor"
+    :number-of-color-to-guess="levelParameters.numberOfColorToGuess"
+    :number-of-tries="levelParameters.numberOfTries"
+    @won="handleWon"
+  />
+  <div class="flex">
+    <div class="grow-1 text-xl">
+      Level {{ level }}
+    </div>
+    <div class="w-16 h-8" />
+  </div>
+  <div v-if="levelParameters.duplicateColor" class="flex">
+    <div class="grow-1 italic">
+      Colors can appear twice
+    </div>
+    <div class="w-16 h-16" />
+  </div>
+  <div v-if="gameOver">
+    <div class="text-4xl">
+      You beat the game !
+    </div>
+    <Button class="mt-8" label="Play again" @click="restart" />
   </div>
 </template>
 
 <style lang="css">
-.history-enter-active,
-.history-leave-active {
-  transition: all 0.5s ease-in;
-}
-.history-enter-from,
-.history-leave-to {
-  opacity: 0;
-  transform: translatey(70px);
-}
+
 </style>

@@ -4,6 +4,7 @@ export function useGame(
   numberOfColors = 8,
   duplicateColor = true,
   numberOfColorToGuess = 4,
+  numberOfTries = 8,
 ) {
   const {
     listOfColors,
@@ -21,9 +22,17 @@ export function useGame(
 
     return combination
   }
-
-  const hasWon = ref(false)
   const guessHistory: Ref<Guess[]> = ref([])
+  const remainingTries = computed(() => {
+    return numberOfTries - guessHistory.value.length
+  })
+  const hasWon = ref(false)
+  const hasLost = computed(() => {
+    if (hasWon.value)
+      return false
+    return remainingTries.value === 0
+  })
+
   const secretColorCombination = ref(newCombination())
   const currentGuess = ref(newGuess())
   const possibleColors = computed(() => {
@@ -36,6 +45,7 @@ export function useGame(
   })
   const correct = ref(0)
   const present = ref(0)
+
   const isGuessComplete = computed(() => {
     return !currentGuess.value.includes('empty')
   })
@@ -49,6 +59,7 @@ export function useGame(
       colors: currentGuess.value,
       correct: correct.value,
       present: present.value,
+      isWinning: correct.value === numberOfColorToGuess,
     })
     correct.value = 0
     present.value = 0
@@ -80,8 +91,14 @@ export function useGame(
       }
     }
 
-    // if (correct.value === numberOfColorToGuess)
+    if (correct.value === numberOfColorToGuess)
+      hasWon.value = true
     pushGuess()
+  }
+
+  function reset() {
+    secretColorCombination.value = newCombination()
+    guessHistory.value = []
   }
 
   return {
@@ -95,5 +112,9 @@ export function useGame(
     isGuessComplete,
     addColor,
     guess,
+    hasWon,
+    hasLost,
+    remainingTries,
+    reset,
   }
 }

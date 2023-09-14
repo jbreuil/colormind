@@ -2,6 +2,7 @@
 const props = defineProps<{
   guess: string[]
   colors: string[]
+  tries: number
   disabled: boolean
 }>()
 
@@ -49,6 +50,7 @@ function addGuess(color: string) {
       <Button
         class="mt-6 mx-1"
         label="Guess"
+        :badge="tries.toString()"
         :disabled="props.disabled"
         @click="$emit('guess')"
       />
