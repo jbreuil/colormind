@@ -33,9 +33,9 @@ function handleWon() {
     </div>
     <div class="w-16 h-8" />
   </div>
-  <div v-if="levelParameters.duplicateColor" class="flex">
+  <div v-if="levelParameters.duplicateColor && !gameOver" class="flex">
     <div class="grow-1 italic">
-      Colors can appear twice more
+      Colors can appear twice or more
     </div>
     <div class="w-16 h-16" />
   </div>
