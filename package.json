@@ -1,8 +1,8 @@
 {
   "name": "template",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.41.0",
+    "@iconify-json/mdi": "^1.1.54",
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.48.0",
     "typescript": "^5.0.2",

@@ -8,7 +8,18 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Avatar: typeof import('primevue/avatar')['default']
+    Badge: typeof import('primevue/badge')['default']
+    BaseBox: typeof import('./src/components/BaseBox.vue')['default']
+    BoxColor: typeof import('./src/components/BoxColor.vue')['default']
+    BoxEmpty: typeof import('./src/components/BoxEmpty.vue')['default']
+    Button: typeof import('primevue/button')['default']
+    ColorBox: typeof import('./src/components/ColorBox.vue')['default']
+    ColorBoxEmpty: typeof import('./src/components/ColorBoxEmpty.vue')['default']
+    copy: typeof import('./src/components/ColorBox copy.vue')['default']
+    Guess: typeof import('./src/components/Guess.vue')['default']
+    GuessInput: typeof import('./src/components/GuessInput.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    OverlayPanel: typeof import('primevue/overlaypanel')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

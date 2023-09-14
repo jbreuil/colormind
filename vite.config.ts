@@ -17,7 +17,7 @@ export default defineConfig({
     AutoImport({
       dts: true,
       dirs: [
-        './composables', // only root modules
+        './src/composables', // only root modules
       ],
       vueTemplate: true,
       imports: [

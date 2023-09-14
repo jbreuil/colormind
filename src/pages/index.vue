@@ -1,15 +1,46 @@
 <script setup lang="ts">
+const {
+  listOfColors,
+  guessHistory,
+  currentGuess,
+  possibleColors,
+  isGuessComplete,
+  addColor,
+  guess,
+  secretColorCombination,
+} = useGame(6, true, 3)
 </script>
 
 <template>
-  <div>
-    <Avatar label="P" class="mr-2" size="xlarge" />
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo">
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="/src/assets/vue.svg" class="logo vue" alt="Vue logo">
-    </a>
+  <div class="flex flex-col justify-center ">
+    <TransitionGroup name="history">
+      <Guess
+        v-for="(guess, index) in guessHistory"
+        :key="index"
+        :colors="guess.colors"
+        :correct="guess.correct"
+        :present="guess.present"
+        class="my-2"
+      />
+    </TransitionGroup>
+    <GuessInput
+      :colors="possibleColors"
+      :guess="currentGuess"
+      :disabled="!isGuessComplete"
+      @add="addColor"
+      @guess="guess"
+    />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
+
+<style lang="css">
+.history-enter-active,
+.history-leave-active {
+  transition: all 0.5s ease-in;
+}
+.history-enter-from,
+.history-leave-to {
+  opacity: 0;
+  transform: translatey(70px);
+}
+</style>
